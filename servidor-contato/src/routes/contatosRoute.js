@@ -7,4 +7,7 @@ router.get("/", controller.getAll)
 router.get("/por-nome/:nome", controller.getByName)
 router.post("/criar", bodyParser.json(), controller.add)
 
+// desafio: /id/:id
+// router.get("/id/:id", controller.getById)
+
 module.exports = router

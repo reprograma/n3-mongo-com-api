@@ -38,8 +38,20 @@ const getByName = (request, response) => {
   })
 }
 
+// desafio: /id/:id
+// const getById = (request, response) => {
+//   const id = request.params.id
+//   Contatos.findById(id,(error, contatos) => {
+//     if (error) {
+//       response.status(400).send(error)
+//     }
+//     response.status(200).send(contatos)
+//   })
+// }
+
 module.exports = {
   getAll,
   getByName,
+  getById,
   add
 }
