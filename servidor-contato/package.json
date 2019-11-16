@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "nodemon": "nodemon server",
+    "start:dev": "nodemon server",
     "start": "node server",
-    "fazeralgolegal": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "5.7.11"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
