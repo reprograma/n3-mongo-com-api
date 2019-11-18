@@ -15,13 +15,18 @@ const ContatoSchema = new Schema ({
   celular: {
     type: String,
     required: true,
-  },
+  }, 
+
+  // desafio 01: incluir campo opcional fotoPerfil 
+  // dataNascimento: {
+  //   type: Date,
+  // }, 
+
+  // desafio 02: incluir campo obrigatório dataNascimento do tipo Date
   // dataNascimento: {
   //   type: Date,
   //   required: true
-  // },   
-  // desafio: incluir campo dataNascimento do tipo Date
-
+  // },  
 })
 
 const ContatoCollection = mongoose.model('contato', ContatoSchema)
