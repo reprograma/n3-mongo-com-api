@@ -4,3 +4,15 @@ Também vamos entender e usar strings de conexão, e criar um usuário para noss
 
 # Recaptulando
 ## Segunda-feira
+O que fizemos?
+
+cd servidor-contato
+npm install
+npm install mongoose 
+Criar o arquivo database.js na pasta model
+Chamar o metodo connect do database no arquivo app.js
+
+Desafio 01: criar um arquivo chamado contatoSchema.js dentro da pasta /model com o Schema dos nossos contatos
+Desafio 02: incluir campo opcional fotoPerfil
+Desafio 03: incluir campo obrigatório dataNascimento do tipo Date
+Desafio 04: no metodo add, fazer o banco (schema) retornar um erro caso o usuário com o mesmo nome já exista
