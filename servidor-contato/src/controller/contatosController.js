@@ -27,9 +27,28 @@ const getAll = (request, response) => {
       return response.status(200).send(contatos)
     }
   })
-};
+}
+
+const deleteById = (request, response) => {
+  var id = req.params.id
+
+  try {
+    Users.findByIdAndRemove(id, (err) => {
+      if (err) {
+        return response.send(err)
+      } else {
+        return response.send("Usuário excluido!")
+      }
+    })
+
+  } catch (err) {
+    return response.status(err.code).send({ error: "Erro ao excluir usuário" })
+  }
+
+}
 
 module.exports = {
   getAll,
-  add
+  add,
+  deleteById
 }
