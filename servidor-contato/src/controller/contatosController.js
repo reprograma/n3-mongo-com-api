@@ -1,27 +1,33 @@
-const model = require("../model/contatos")
-
-const getAll = (request, response) => {
-  console.log(request.url)
-  response.status(200).send(model.agenda)
-};
+const contatosCollection = require("../model/contatoSchema")
 
 const add = (request, response) => {
-  let contato = request.body
-  let baseDados = model.agenda.contatos
-  contato.id = Math.random().toString(36).substr(-8)
+  console.log(request.url)
+  // novo objeto pra nossa coleção
+  const contatoDoBody = request.body
+  const contato = new contatosCollection(contatoDoBody)
 
-  if (!contato.nome || !contato.dataNascimento || !contato.celular) {
-    response.status(400).send("Dados inválidos");
-  } else {
-    if (baseDados.find(dado => dado.nome === contato.nome)) {
-      response.status(400).send("Contato já cadastrado")
+  contato.save((error) => {
+    // if(error !== null && error !== undefined)
+    if(error) {
+      return response.status(400).send(error)
     } else {
-      model.agenda.contatos.push(contato)
-      response.status(201).send(contato)
+      return response.status(201).send(contato)
     }
-  }
-
+  })
 }
+// DESAFIO: implementar o metodo getAll usando o mongodb
+
+const getAll = (request, response) => {
+  // response.status(200).send(model.agenda)
+  console.log(request.url)
+  contatosCollection.find((error,contatos) => {
+    if(error){
+      return response.status(500).send(error)
+    } else {
+      return response.status(200).send(contatos)
+    }
+  })
+};
 
 module.exports = {
   getAll,
