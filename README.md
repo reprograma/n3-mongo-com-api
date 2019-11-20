@@ -16,3 +16,6 @@ Desafio 01: criar um arquivo chamado contatoSchema.js dentro da pasta /model com
 Desafio 02: incluir campo opcional fotoPerfil
 Desafio 03: incluir campo obrigatório dataNascimento do tipo Date
 Desafio 04: no metodo add, fazer o banco (schema) retornar um erro caso o usuário com o mesmo nome já exista
+
+## Quarta
+Fizemos nosso primeiro pull request
