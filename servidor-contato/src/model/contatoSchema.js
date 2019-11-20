@@ -10,10 +10,19 @@ const ContatoSchema = new Schema({
   nome: {
     type: String,
     required: true,
+    unique: true,
   },
   celular: {
     type: String,
     required: true,
+  },
+  dataNascimento : {
+    type: Date,
+    required: true,
+  },
+  fotoPerfil: {
+    type: String, // aqui vai a URL da foto
+    required: false,
   }
 })
 
