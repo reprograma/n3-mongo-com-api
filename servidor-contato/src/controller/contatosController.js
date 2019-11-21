@@ -79,24 +79,6 @@ const deleteById = (request, response) => {
   })
 }
 
-const updateAllFields = (request, response) => {
-  const idParam = request.params.id
-  const contatoAtualizado = request.body
-  const options = { new: true }
-
-  contatosCollection.findByIdAndUpdate(idParam, contatoAtualizado, options, (error, contato) => {
-    if(error) {
-      return response.status(500).send(error)
-    } else {
-      if(contato) {
-        return response.status(200).send(contato)
-      } else {
-        return response.sendStatus(404)
-      }
-    }
-  })
-}
-
 const updateFields = (request, response) => {
   const idParam = request.params.id
   const campos = request.body
@@ -121,6 +103,5 @@ module.exports = {
   getByName,
   getById,
   deleteById,
-  updateAllFields,
   updateFields,
 }
