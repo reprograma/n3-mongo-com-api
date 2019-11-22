@@ -1,8 +1,12 @@
 const express = require("express")
 const app = express()
+const bodyParser = require("body-parser")
 
 const database = require('./model/database')
 database.connect()
+
+//middleware
+app.use(bodyParser.json())
 
 //rotas
 const index = require("./routes/index")

@@ -79,10 +79,33 @@ const deleteById = (request, response) => {
   })
 }
 
+const updateById = (request, response) => {
+  const idParam = request.params.id
+  const contatoDoBody = request.body
+  const options = { new: true }
+
+  contatosCollection.findByIdAndUpdate(
+    idParam,
+    contatoDoBody,
+    options,
+    (error, contato) => {
+      if(error) {
+        return response.status(500).send(error)
+      } else if(contato) {
+        // return response.sendStatus(204) // atualizei mas n vou responder nada
+        return response.status(200).send(contato)
+      } else {
+        return response.sendStatus(404)
+      }
+    }
+  )
+}
+
 module.exports = {
   getAll,
   add,
   getByName,
   getById,
+  updateById,
   deleteById
 }
