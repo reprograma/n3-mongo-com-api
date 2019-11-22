@@ -20,6 +20,10 @@ Desafio 03: incluir campo obrigatório dataNascimento do tipo Date
 
 Desafio 04: no metodo add, fazer o banco (schema) retornar um erro caso o usuário com o mesmo nome já exista
 
+## Terça-feira
+- fizemos a rota de delete por id
+- fizemos a rota de get por id, e get por nome usando regex
+
 ## Quarta
 Fizemos nosso primeiro pull request
 
